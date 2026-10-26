@@ -1,0 +1,5 @@
+# Nunca subir dados de clientes para o GitHub
+seed*.json
+backup*.json
+*.xlsx
+*.csv
