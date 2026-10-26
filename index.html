@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FV Representações · Sistema</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Tela de login -->
+<section id="login" class="login hidden">
+  <div class="login-card">
+    <img src="icon.svg" alt="" width="72" height="72">
+    <h1>Felipe Varone<br><span>Representações</span></h1>
+    <p>Sistema comercial · clientes, pipeline, visitas, pedidos e comissões</p>
+    <button id="btnLogin" class="btn primary big">Entrar com Google</button>
+    <p id="loginMsg" class="muted small"></p>
+  </div>
+</section>
+
+<!-- Aplicativo -->
+<div id="app" class="hidden">
+  <aside id="side">
+    <div class="brand"><img src="icon.svg" alt="" width="36" height="36"><div><b>Felipe Varone</b><small>REPRESENTAÇÕES</small></div></div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <div id="userBox" class="muted small"></div>
+      <button id="btnLogout" class="btn ghost small">Sair</button>
+    </div>
+  </aside>
+  <main>
+    <header class="top">
+      <button id="btnMenu" class="btn ghost icon" aria-label="Menu">☰</button>
+      <h2 id="pageTitle"></h2>
+      <div id="pageActions"></div>
+    </header>
+    <div id="view"></div>
+  </main>
+</div>
+
+<!-- Modal -->
+<dialog id="modal"><form method="dialog" id="modalForm"></form></dialog>
+<div id="toast"></div>
+
+<div id="setup" class="login hidden">
+  <div class="login-card">
+    <h1>Falta configurar o Firebase</h1>
+    <p>Abra o arquivo <code>firebase-config.js</code> e cole a configuração do seu projeto Firebase (passo 3 do guia).</p>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
