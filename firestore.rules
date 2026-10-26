@@ -1,0 +1,13 @@
+rules_version = '2';
+// Cada usuário só lê e grava dentro de users/{seu uid}.
+// Além disso, só o e-mail do Felipe pode usar o banco.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == userId
+        && request.auth.token.email == "felipedvvarone@gmail.com"
+        && request.auth.token.email_verified == true;
+    }
+  }
+}
